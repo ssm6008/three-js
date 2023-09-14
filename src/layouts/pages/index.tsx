@@ -4,18 +4,19 @@
  * Created by hyeonmin
  * Created at 2023/09/14 2:04 PM
  *
- * Component Index
+ * Component ThreeHome
  * Description : React Web 컴포넌트
  */
 
 
 import React from 'react';
+import * as THREE from 'three';
 
-interface IndexProps {
+interface ThreeHomeProps {
 
 }
 
-const Index = ({...props}: IndexProps) => {
+const ThreeHome = ({...props}: ThreeHomeProps) => {
   /* 다국어 함수 - 가급적 다국어 함수를 컴포넌트 제일 위에 선언하면 해당 컴포넌트가 어느 영역의 다국어 데이터를 참조하는지 확인이 쉽다.
    t: 지정된 prefix 하위의 다국어만 사용
    g: prefix 무시하고 루트에서부터 다국어 탐색
@@ -31,10 +32,17 @@ const Index = ({...props}: IndexProps) => {
   // [ JSX Mark-up ] ------------------------------------------------------------------------------------------------------------ //
 
   return (
-    <div>Hello Index !!</div>
+    <div>
+      <header>
+        <></>
+      </header>
+      <body>
+      {'test'}
+      </body>
+    </div>
   );
 };
 
-Index.defaultProps = {};
+ThreeHome.defaultProps = {};
 
-export default Index;
+export default ThreeHome;
