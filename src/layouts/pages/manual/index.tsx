@@ -2,21 +2,22 @@
  * Project : three-js
  * Created with WebStorm
  * Created by hyeonmin
- * Created at 2023/09/20 2:23 PM
+ * Created at 2023/09/14 2:04 PM
  *
- * Component Main
+ * Component ThreeHome
  * Description : React Web 컴포넌트
  */
 
 
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Canvas} from '@react-three/fiber'
+import {OrbitControls} from '@react-three/drei'
 
-interface MainProps {
+interface ThreeHomeProps {
 
 }
 
-const Main = ({...props}: MainProps) => {
+const ThreeHome = ({...props}: ThreeHomeProps) => {
   /* 다국어 함수 - 가급적 다국어 함수를 컴포넌트 제일 위에 선언하면 해당 컴포넌트가 어느 영역의 다국어 데이터를 참조하는지 확인이 쉽다.
    t: 지정된 prefix 하위의 다국어만 사용
    g: prefix 무시하고 루트에서부터 다국어 탐색
@@ -29,18 +30,24 @@ const Main = ({...props}: MainProps) => {
   // [ hook 사용 ] ------------------------------------------------------------------------------------------------------------ //
   // [ effect 기능 ] ------------------------------------------------------------------------------------------------------------ //
   // [ 이벤트 핸들러 ] ------------------------------------------------------------------------------------------------------------ //
+
   // [ JSX Mark-up ] ------------------------------------------------------------------------------------------------------------ //
 
   return (
-    <div>
-      <h3>Hello Main !!</h3>
-      <div>
-        <Link to={'/start'}>start</Link>
-      </div>
-    </div>
+    <>
+      <Canvas >
+        <OrbitControls autoRotate={true}/>
+        <mesh position={0} scale={2}>
+          <ambientLight intensity={1} />
+          <directionalLight position={[-1,0,1]} intensity={0.5} />
+          <boxGeometry args={[2, 2, 2]} />
+          <meshStandardMaterial attach="material" color={0xa3b18a}/>
+        </mesh>
+      </Canvas>
+    </>
   );
 };
 
-Main.defaultProps = {};
+ThreeHome.defaultProps = {};
 
-export default Main;
+export default ThreeHome;
