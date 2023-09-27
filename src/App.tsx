@@ -1,6 +1,5 @@
 import React from 'react';
-import ThreeHome from './layouts/pages'
-import {BrowserRouter, Navigate, Route, Routes, useLocation, useNavigate} from 'react-router-dom'
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import {getMenuRoutes} from './routes'
 
 function App() {
